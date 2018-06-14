@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 /* 
  * @props title {string}
@@ -23,6 +23,6 @@ export default (props) => {
       <h2 className="header__subtitle">{ subtitle }</h2>
 
     </div>
-  );
+  )
 
 }
