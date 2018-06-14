@@ -1,0 +1,27 @@
+.table {
+  width: 100%;
+  max-width: 100%;
+  overflow: scroll;
+  margin-bottom: 1rem;
+  background-color: transparent;
+  border: 1px solid #dee2e6;
+
+  thead {
+    background-color: #cfd8dc;
+    background-color: #8B7B8B;
+    //background-color: #8d86ad;
+  }
+
+  tbody tr:hover {
+    background-color: rgba(0,0,0,.05);
+  }
+
+  th, td {
+    padding: .75rem;
+    padding-top: 1.1rem;
+    padding-bottom: 1rem;
+    border-top: none;
+    border-bottom: 1px solid #dee2e6;
+    text-align: left;
+  }
+}
