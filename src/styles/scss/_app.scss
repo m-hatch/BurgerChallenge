@@ -1,0 +1,12 @@
+html, body {
+  background-color: $concrete;
+}
+
+.app {
+  position: relative;
+  min-width: 380px;
+  background-color: $concrete;
+  font-family: $Helvetica;
+  color: $emperor;
+  font-weight: 300;
+}
