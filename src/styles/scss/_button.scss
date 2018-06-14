@@ -1,0 +1,29 @@
+.button {
+  display: inline-block;
+  vertical-align: middle;
+  color: $white;
+  font-size: .8em;
+  font-weight: 600;
+  padding: .75em 1.5em;
+  text-align: center;
+  //border: 1px solid #71637D;
+  border-radius: 2px;
+  background-color: #615872;
+  background-image: none;
+  touch-action: manipulation;
+  cursor: pointer;
+  user-select: none;
+  appearance: none;
+  margin-right: 1em;
+
+  &:hover,
+  &:active {
+    //background-color: #816687;
+    background-color: #71637D;
+    color: $white;
+  }
+
+  &:focus {
+    outline: none !important;
+  }
+}
