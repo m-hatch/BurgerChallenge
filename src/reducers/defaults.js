@@ -10,5 +10,6 @@ export const main = {
 }
 
 export const modal = {
-  showModal: false
+  showModal: false,
+  isComplete: false
 }
