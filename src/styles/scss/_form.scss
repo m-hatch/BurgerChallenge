@@ -1,3 +1,10 @@
-input {
-  display: inline-block;
+.form {
+  input {
+    display: inline-block;
+  }
+
+  > div {
+    margin-bottom: 10px;
+  }
 }
+

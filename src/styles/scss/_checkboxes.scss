@@ -1,0 +1,16 @@
+.checkboxes {
+  &__label {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  label {
+    width: 25%;
+  }
+
+  input {
+    margin-right: 8px;
+  }
+}

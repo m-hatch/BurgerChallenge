@@ -1,5 +1,6 @@
 import React from 'react'
 import { Field, reduxForm } from 'redux-form'
+import { ReduxCheckbox, Checkboxes } from 'react-form-checkbox'
 import ReduxInput from './ReduxInput'
 import ReduxSelect from './ReduxSelect'
 import Button from './Button'
@@ -20,6 +21,8 @@ const thereIsNoTry = [
   <option key="No" value="No">No</option>
 ]
 
+const toppings = ['lettuce', 'tomato', 'cheese', 'ketchup', 'mayonnaise', 'mustard', 'bacon', 'onions']
+
 const BurgerForm = (props) => {
 
   const handleEdit = () => props.initialize(props.initData)
@@ -27,7 +30,7 @@ const BurgerForm = (props) => {
   //handleEdit()
 
   return (
-    <form onSubmit={ props.handleSubmit(props.onSubmit) }>
+    <form className="form" onSubmit={ props.handleSubmit(props.onSubmit) }>
       
       <Field component={ ReduxInput } name="id" label="ID"/>
 
@@ -40,6 +43,11 @@ const BurgerForm = (props) => {
       <Field component={ ReduxSelect } name="has_patty" label="Has Patty">
         { thereIsNoTry }
       </Field>
+
+      <div className="checkboxes">
+        <div className="checkboxes__label">Toppings</div>
+        <Field component={ ReduxCheckbox(Checkboxes) } name="toppings" data={ toppings } />
+      </div>
 
       <Button type="button" value="Submit" onClick={ handleEdit } />
 
