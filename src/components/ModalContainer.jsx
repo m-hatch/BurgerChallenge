@@ -38,7 +38,7 @@ class ModalContainer extends React.Component {
 					{ 
 						this.props.completed && 
 						<div>
-							<p className="dialog__confirm">Your request has been sent!</p>
+							<p>Your request has been sent!</p>
 						</div>
 					}
 

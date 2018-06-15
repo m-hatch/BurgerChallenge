@@ -1,14 +1,13 @@
 .dialog {
   position: relative;
   margin: 50vh auto;
-  height: calc(100vh - 60px);
+  max-height: calc(100vh - 70px);
   width: 90%;
   max-width: 620px;
   background-color: $white;
   color: $pigeon-grey;
-  //font-family: $Montserrat;
   overflow: auto;
-  padding: 25px;
+  padding: 30px 25px 40px;
   border-radius: 5px;
   box-shadow: 0 4px 40px $shadow;
   opacity: 0;
@@ -34,80 +33,11 @@
       cursor: pointer;
     }
   }
-
-  &__container {
-    padding: 16px;
-    border-radius: 5px;
-
-    &--complete {
-      display: none;
-    }
-  }
-
-  &__input {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid $dark-grey;
-    border-radius: 4px;
-    box-sizing: border-box;
-    margin-top: 8px;
-    resize: vertical;
-
-    &::-webkit-input-placeholder {
-      color: $silver;
-    }
-
-    &::-moz-placeholder {
-      color: $silver;
-    }
-
-    &:-ms-input-placeholder {
-      color: $silver;
-    }
-
-    &:-moz-placeholder {
-      color: $silver;
-    }
-
-    &.active {
-      &:invalid {
-        box-shadow: 0 0 3px 1px $crimson;
-      }
-
-      &:focus {
-        box-shadow: 0 0 3px 1px $dark-grey;
-      }
-    }
-  }
-
-  &__textarea {
-    height: 100px;
-  }
-
-  &__error {
-    color: $crimson;
-    font-size: 12px;
-    margin-top: 8px;
-    margin-bottom: 18px;
-  }
-
-  &__confirm {
-    color: $verdant;
-    text-align: center;
-    font-size: 18px;
-  }
-
-  &__checkmark {
-    max-width: 100px;
-    height: auto;
-    margin: 30px auto;
-  }
 }
 
 @media screen and (min-width: 568px) {
   .dialog {
     width: 80%;
-    height: calc(100vh - 20px);
   }
 }
 
