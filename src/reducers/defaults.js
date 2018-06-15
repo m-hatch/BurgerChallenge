@@ -9,7 +9,7 @@ export const app = {
   },
   toppings: {
     values: ['lettuce', 'tomato', 'cheese', 'ketchup', 'mayonnaise', 'mustard', 'bacon', 'onions'],
-    selected: null
+    selected: 'all'
   }
 }
 

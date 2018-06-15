@@ -6,10 +6,15 @@ import * as init from './defaults'
 // reducers
 function app(state = init.app, action) {
   switch(action.type) {
-    case types.SET_MAIN_CONTENT:
+
+    case types.SET_TOPPING:
+      const newState = state
+      state.toppings.selected = action.topping
+
       return Object.assign(
-        {}, state, { content: action.data }
+        {}, state, newState
       );
+
     default:
       return state;
   }
@@ -17,14 +22,17 @@ function app(state = init.app, action) {
 
 function modal(state = init.modal, action) {
   switch(action.type) {
+
     case types.SHOW_MODAL:
       return Object.assign(
         {}, state, { showModal: action.isVisible }
       )
+
     case types.SET_FORM_COMPLETED:
       return Object.assign(
         {}, state, { isComplete: action.isComplete }
       )
+      
     default:
       return state
   }
