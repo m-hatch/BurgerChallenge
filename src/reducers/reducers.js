@@ -13,10 +13,23 @@ function app(state = init.app, action) {
 
       return Object.assign(
         {}, state, newState
-      );
+      )
 
     default:
-      return state;
+      return state
+  }
+}
+
+function menu(state = init.menu, action) {
+  switch(action.type) {
+
+    case types.SET_MENU:
+      return Object.assign(
+        {}, state, { burgers: action.burgers }
+      )
+
+    default:
+      return state
   }
 }
 
@@ -32,7 +45,7 @@ function modal(state = init.modal, action) {
       return Object.assign(
         {}, state, { isComplete: action.isComplete }
       )
-      
+
     default:
       return state
   }
@@ -41,6 +54,7 @@ function modal(state = init.modal, action) {
 // combine reducers
 export default combineReducers({
   app,
+  menu,
   modal,
   form: formReducer
 })
