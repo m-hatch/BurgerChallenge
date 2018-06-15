@@ -42,8 +42,7 @@ class ModalContainer extends React.Component {
 						</div>
 					}
 
-					<BurgerForm onSubmit={ this.handleSubmit } 
-						initData ={ this.props.data } />
+					<BurgerForm onSubmit={ this.handleSubmit } />
 
 				</div>
 
@@ -56,8 +55,7 @@ class ModalContainer extends React.Component {
 const mapStateToProps = (state) => {
 	return {
 		showModal: state.modal.showModal,
-		isComplete: state.modal.isComplete,
-		data: state.main.testData
+		isComplete: state.modal.isComplete
 	}
 }
 

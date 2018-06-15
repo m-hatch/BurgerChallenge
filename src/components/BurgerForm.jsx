@@ -1,33 +1,26 @@
 import React from 'react'
 import { Field, reduxForm } from 'redux-form'
+import { connect } from 'react-redux'
 import { ReduxCheckbox, Checkboxes } from 'react-form-checkbox'
 import ReduxInput from './ReduxInput'
 import ReduxSelect from './ReduxSelect'
 import Button from './Button'
+import validate from '../util/validate'
 
-const validate = values => {
-  const errors = {}
-  if (!values.id) {
-    errors.id = 'Required'
-  }
-  if (!values.name) {
-    errors.name = 'Required'
-  }
-  return errors
-}
-
+// keep it dry
 const thereIsNoTry = [
   <option key="Yes" value="Yes">Yes</option>,
   <option key="No" value="No">No</option>
 ]
 
-const toppings = ['lettuce', 'tomato', 'cheese', 'ketchup', 'mayonnaise', 'mustard', 'bacon', 'onions']
-
-const BurgerForm = (props) => {
+/*
+ * @props onSubmit {function}
+ * @redux initData {object}
+ * @redux toppings {array}
+ */
+let BurgerForm = (props) => {
 
   const handleEdit = () => props.initialize(props.initData)
-
-  //handleEdit()
 
   return (
     <form className="form" onSubmit={ props.handleSubmit(props.onSubmit) }>
@@ -46,7 +39,7 @@ const BurgerForm = (props) => {
 
       <div className="checkboxes">
         <div className="checkboxes__label">Toppings</div>
-        <Field component={ ReduxCheckbox(Checkboxes) } name="toppings" data={ toppings } />
+        <Field component={ ReduxCheckbox(Checkboxes) } name="toppings" data={ props.toppings } />
       </div>
 
       <Button type="button" value="Submit" onClick={ handleEdit } />
@@ -56,6 +49,20 @@ const BurgerForm = (props) => {
 
 }
 
+// state operations
+const mapStateToProps = (state) => {
+  return {
+    toppings: state.app.toppings.values,
+    initData: state.app.testData
+  }
+}
+
+// map app state to component
+BurgerForm = connect(
+    mapStateToProps
+)(BurgerForm)
+
+// map form state to component
 export default reduxForm({
   form: 'burgers',
   initialValues: {
@@ -63,4 +70,4 @@ export default reduxForm({
     has_patty: 'Yes'
   },
   validate
-})(BurgerForm);
+})(BurgerForm)

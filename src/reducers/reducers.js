@@ -4,7 +4,7 @@ import * as types from '../actions/types'
 import * as init from './defaults'
 
 // reducers
-function main(state = init.main, action) {
+function app(state = init.app, action) {
   switch(action.type) {
     case types.SET_MAIN_CONTENT:
       return Object.assign(
@@ -32,7 +32,7 @@ function modal(state = init.modal, action) {
 
 // combine reducers
 export default combineReducers({
-  main,
+  app,
   modal,
   form: formReducer
 })
