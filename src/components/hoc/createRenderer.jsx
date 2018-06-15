@@ -1,17 +1,15 @@
 import React from 'react'
 
-const createRenderer = renderFunc => 
-  ({ input, meta, name, label, children }) => 
+const createRenderer = renderFunc => (props) => (
     <div>
-
-      <label htmlFor={ name }>{ label }</label>
+      <label htmlFor={ props.name }>{ props.label }</label>
 
       {/* input */}
-      { renderFunc(input, meta, children) }
+      { renderFunc(props) }
 
       {/* error */}
-      { meta.error && meta.touched && <span>{ meta.error }</span> }
-
+      { props.meta.error && props.meta.touched && <span>{ props.meta.error }</span> }
     </div>
+  )
 
 export default createRenderer
