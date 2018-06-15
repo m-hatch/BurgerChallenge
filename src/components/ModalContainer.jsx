@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import * as actions from '../actions/actions'
+import BurgerForm from './BurgerForm'
 
 class ModalContainer extends React.Component {
 
@@ -13,6 +14,12 @@ class ModalContainer extends React.Component {
 		if(e.target == this.refs.modal) {
 			this.props.closeForm()
 		}
+	}
+
+	handleSubmit(values) {
+		// Do something with the form values
+		console.log(values)
+		alert('submitted')
 	}
 
 	render() {
@@ -34,6 +41,9 @@ class ModalContainer extends React.Component {
 							<p className="dialog__confirm">Your request has been sent!</p>
 						</div>
 					}
+
+					<BurgerForm onSubmit={ this.handleSubmit } 
+						initData ={ this.props.data } />
 
 				</div>
 
