@@ -1,7 +1,7 @@
 import React from 'react'
 import Header from './Header'
 import Controls from './Controls'
-import Menu from './Menu'
+import MenuContainer from './MenuContainer'
 import ModalContainer from './ModalContainer'
 
 const App = (props) => {
@@ -9,7 +9,7 @@ const App = (props) => {
     <div className="app">
       <Header />
       <Controls />
-      <Menu />
+      <MenuContainer />
       <ModalContainer />
     </div>
   )
