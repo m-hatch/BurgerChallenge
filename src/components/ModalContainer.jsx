@@ -16,6 +16,10 @@ class ModalContainer extends React.Component {
 		}
 	}
 
+	getTitle() {
+		return this.props.method === 'POST' ? 'Add A Burger' : 'Edit A Burger'
+	}
+
 	render() {
 		return (
 			<div ref="modal"
@@ -26,7 +30,7 @@ class ModalContainer extends React.Component {
 
 					<div>
 						<span className="dialog__btn" onClick={ this.props.closeForm }>&times;</span>
-						<h3 className="dialog__heading">Add A Burger</h3>
+						<h3 className="dialog__heading">{ this.getTitle() }</h3>
 					</div>
 
 					<BurgerForm />
@@ -41,7 +45,8 @@ class ModalContainer extends React.Component {
 
 const mapStateToProps = (state) => {
 	return {
-		showModal: state.modal.showModal
+		showModal: state.modal.showModal,
+		method: state.modal.formMethod
 	}
 }
 
