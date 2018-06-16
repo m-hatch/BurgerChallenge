@@ -5,10 +5,12 @@ export function convertBool(str) {
 export function convertJson(arr) {
   const result = []
 
-  for (let item of arr) {
-    let temp = {}
-    temp.name = item
-    result.push(temp)
+  if (arr && arr.length) {
+    for (let item of arr) {
+      let temp = {}
+      temp.name = item
+      result.push(temp)
+    }
   }
   
   return result
