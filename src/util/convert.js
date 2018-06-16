@@ -15,3 +15,15 @@ export function convertJson(arr) {
   
   return result
 }
+
+export function flattenObj(arr) {
+  const result = []
+
+  if (arr && arr.length) {
+    for (let item of arr) {
+      result.push(item['name'])
+    }
+  }
+  
+  return result
+}

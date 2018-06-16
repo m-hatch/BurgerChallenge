@@ -5,12 +5,9 @@ export const app = {
     values: ['lettuce', 'tomato', 'cheese', 'ketchup', 'mayonnaise', 'mustard', 'bacon', 'onions', 'mushrooms', 'avocado', 'eggplant', 'beets'],
     selected: 'all'
   },
-  "testData": {
-    "id": 999,
-    "name": "Silly Girl",
-    "has_bun": "No",
-    "has_patty": "Yes",
-    "toppings": ["cheese", "bacon", "onions"]
+  initialValues: {
+    has_bun: 'Yes',
+    has_patty: 'Yes'
   }
 }
 
@@ -20,5 +17,6 @@ export const menu = {
 
 export const modal = {
   showModal: false,
-  method: ''
+  formMethod: '',
+  formId: null
 }

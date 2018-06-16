@@ -43,7 +43,12 @@ function modal(state = init.modal, action) {
 
     case types.SET_METHOD:
       return Object.assign(
-        {}, state, { method: action.method }
+        {}, state, { formMethod: action.method }
+      )
+
+    case types.SET_FORM_ID:
+      return Object.assign(
+        {}, state, { formId: action.id }
       )
 
     default:

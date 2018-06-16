@@ -9,6 +9,7 @@ class MenuContainer extends React.Component {
   constructor() {
     super()
     this.applyFilter = this.applyFilter.bind(this)
+    this.handleClick = this.handleClick.bind(this)
   }
 
   componentDidMount() {
@@ -42,11 +43,25 @@ class MenuContainer extends React.Component {
     this.props.setMenu(result)
   }
 
+  handleClick(e, method, id) {
+    e.preventDefault()
+
+    if (method === 'edit') {
+      // open form with method and id
+      this.props.openForm('PUT', id)
+    }
+
+    if (method === 'delete') {
+      // send warning and delete
+      alert('delete')
+    }
+  }
+
   render() {
     return (
       <div className="menu">
 
-        <Menu burgers={ this.props.burgers } />
+        <Menu burgers={ this.props.burgers } onClick={ this.handleClick } />
 
       </div>
     )
@@ -65,6 +80,11 @@ const mapDispatchToProps = (dispatch) => {
   return {
     setMenu: (burgers) => {
       dispatch(actions.setMenu(burgers))
+    },
+    openForm: (method, id) => {
+      dispatch(actions.setMethod(method))
+      dispatch(actions.setFormId(id))
+      dispatch(actions.showModal(true))
     }
   }
 }

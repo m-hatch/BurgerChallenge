@@ -16,3 +16,7 @@ export function showModal(isVisible) {
 export function setMethod(method) {
   return { type: types.SET_METHOD, method}
 }
+
+export function setFormId(id) {
+  return { type: types.SET_FORM_ID, id}
+}
