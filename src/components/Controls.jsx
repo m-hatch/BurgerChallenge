@@ -3,16 +3,7 @@ import { connect } from 'react-redux'
 import * as actions from '../actions/actions'
 import Button from './Button'
 
-/*
- * @redux toppings {array}
- * @redux setMethod {function}
- * @redux openForm {function}
- * @redux setTopping {function}
- */
 const Controls = (props) => {
-
-  // initialize default
-  const toppings = props.toppings || []
 
   // open form with method set to POST
   const handleClick = (e) => {
@@ -36,7 +27,7 @@ const Controls = (props) => {
 
         <option value="all">Choose By Topping...</option>
         { 
-          toppings.map(item => <option key={item} value={item}>{ item }</option>) 
+          props.toppings.map(item => <option key={item} value={item}>{ item }</option>) 
         }
 
       </select>
