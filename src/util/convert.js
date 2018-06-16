@@ -2,6 +2,10 @@ export function convertBool(str) {
   return str === 'Yes' ? true : false
 }
 
+export function reverseBool(bool) {
+  return bool ? 'Yes' : 'No'
+}
+
 export function convertJson(arr) {
   const result = []
 

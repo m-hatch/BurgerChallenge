@@ -7,7 +7,7 @@ import ReduxInput from './ReduxInput'
 import ReduxSelect from './ReduxSelect'
 import Button from './Button'
 import validate from '../util/validate'
-import { convertBool, convertJson, flattenObj } from '../util/convert'
+import { convertBool, convertJson, reverseBool, flattenObj } from '../util/convert'
 import { postData, putData } from '../util/request'
 
 class BurgerForm extends React.Component {
@@ -29,6 +29,8 @@ class BurgerForm extends React.Component {
     const data = this.props.burgers.filter(
       burger => burger.id === this.props.formId
     )[0]
+    data.has_bun = reverseBool(data.has_bun)
+    data.has_patty = reverseBool(data.has_patty)
     data.toppings = flattenObj(data.toppings)
     this.props.initialize(data)
   }
