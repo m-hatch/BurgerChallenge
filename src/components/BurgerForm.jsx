@@ -52,8 +52,7 @@ let BurgerForm = (props) => {
 // state operations
 const mapStateToProps = (state) => {
   return {
-    toppings: state.app.toppings.values,
-    initData: state.app.testData
+    toppings: state.app.toppings.values
   }
 }
 
