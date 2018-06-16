@@ -4,12 +4,6 @@ import * as actions from '../actions/actions'
 import Menu from './Menu'
 import { fetchData } from '../util/fetch'
 
-/*
- * @redux api {string}
- * @redux filter {string}
- * @redux burgers {array}
- * @redux setMenu {function}
- */
 class MenuContainer extends React.Component {
 
   constructor() {
@@ -51,7 +45,9 @@ class MenuContainer extends React.Component {
   render() {
     return (
       <div className="menu">
+
         <Menu burgers={ this.props.burgers } />
+
       </div>
     )
   }
