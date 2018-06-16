@@ -1,13 +1,13 @@
 import React from 'react'
 
-const createRenderer = renderFunc => (props) => (
+const createRenderer = component => (props) => (
     <div className={ (props.meta.error && props.meta.touched) ? 
       `${props.className} has-error` : props.className }>
       
       <label htmlFor={ props.name }>{ props.label }</label>
 
       {/* input */}
-      { renderFunc(props) }
+      { component(props) }
 
       {/* error */}
       { props.meta.error && props.meta.touched 
