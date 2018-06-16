@@ -25,9 +25,9 @@ let BurgerForm = (props) => {
   return (
     <form className="form" onSubmit={ props.handleSubmit(props.onSubmit) }>
       
-      <Field component={ ReduxInput } name="id" label="ID"/>
+      { props.method === 'PUT' && <Field component={ ReduxInput } name="id" label="ID" /> }
 
-      <Field component={ ReduxInput } name="name" label="Name"/>
+      <Field component={ ReduxInput } name="name" label="Name" />
       
       <Field component={ ReduxSelect } name="has_bun" label="Has Bun">
         { thereIsNoTry }
@@ -42,7 +42,8 @@ let BurgerForm = (props) => {
         <Field component={ ReduxCheckbox(Checkboxes) } name="toppings" data={ props.toppings } />
       </div>
 
-      <Button type="button" value="Submit" onClick={ handleEdit } />
+      {/*<Button type="submit" value="Submit" onClick={ handleEdit } />*/}
+      <Button type="submit" value="Submit" />
 
     </form>
   )
@@ -52,7 +53,8 @@ let BurgerForm = (props) => {
 // state operations
 const mapStateToProps = (state) => {
   return {
-    toppings: state.app.toppings.values
+    toppings: state.app.toppings.values,
+    initData: state.app.testData
   }
 }
 

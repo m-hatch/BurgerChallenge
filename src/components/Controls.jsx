@@ -5,6 +5,7 @@ import Button from './Button'
 
 /*
  * @redux toppings {array}
+ * @redux setMethod {function}
  * @redux openForm {function}
  * @redux setTopping {function}
  */
@@ -12,6 +13,12 @@ const Controls = (props) => {
 
   // initialize default
   const toppings = props.toppings || []
+
+  // open form with method set to POST
+  const handleClick = (e) => {
+    props.setMethod('POST')
+    props.openForm()
+  }
 
   // set selected topping filter
   const handleChange = (e) => {
@@ -22,7 +29,7 @@ const Controls = (props) => {
   return (
     <div className="controls">
 
-      <Button type="button" value="Add Burger" onClick={ props.openForm } />
+      <Button type="button" value="Add Burger" onClick={ handleClick } />
 
       <select className="controls__select form-control" 
         name="filter" onChange={ handleChange }>
@@ -46,6 +53,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
+    setMethod: (method) => {
+      dispatch(actions.setMethod(method))
+    },
     openForm: () => {
       dispatch(actions.showModal(true))
     },

@@ -41,9 +41,9 @@ function modal(state = init.modal, action) {
         {}, state, { showModal: action.isVisible }
       )
 
-    case types.SET_FORM_COMPLETED:
+    case types.SET_METHOD:
       return Object.assign(
-        {}, state, { isComplete: action.isComplete }
+        {}, state, { method: action.method }
       )
 
     default:

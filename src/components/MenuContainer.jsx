@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import * as actions from '../actions/actions'
 import Menu from './Menu'
-import { fetchData } from '../util/fetch'
+import { fetchData } from '../util/request'
 
 class MenuContainer extends React.Component {
 

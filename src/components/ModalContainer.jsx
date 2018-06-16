@@ -2,12 +2,15 @@ import React from 'react'
 import { connect } from 'react-redux'
 import * as actions from '../actions/actions'
 import BurgerForm from './BurgerForm'
+import { convertBool, convertJson } from '../util/convert'
+import { postData } from '../util/request'
 
 class ModalContainer extends React.Component {
 
 	constructor(props) {
 		super(props)
 		this.handleOutsideClick = this.handleOutsideClick.bind(this)
+		this.handleSubmit = this.handleSubmit.bind(this)
 	}
 
 	handleOutsideClick(e) {
@@ -17,9 +20,16 @@ class ModalContainer extends React.Component {
 	}
 
 	handleSubmit(values) {
-		// Do something with the form values
-		console.log(values)
+		const data = {
+			"id": values.id,
+	    "name": values.name,
+	    "has_bun": convertBool(values.has_bun),
+	    "has_patty": convertBool(values.has_patty),
+	    "toppings": convertJson(values.toppings)
+		}
+		postData(this.props.url, data, this.props.setMenu)
 		alert('submitted')
+		this.props.closeForm()
 	}
 
 	render() {
@@ -35,14 +45,7 @@ class ModalContainer extends React.Component {
 						<h3 className="dialog__heading">Add A Burger</h3>
 					</div>
 
-					{ 
-						this.props.completed && 
-						<div>
-							<p>Your request has been sent!</p>
-						</div>
-					}
-
-					<BurgerForm onSubmit={ this.handleSubmit } />
+					<BurgerForm method={ this.props.method } onSubmit={ this.handleSubmit } />
 
 				</div>
 
@@ -55,7 +58,8 @@ class ModalContainer extends React.Component {
 const mapStateToProps = (state) => {
 	return {
 		showModal: state.modal.showModal,
-		isComplete: state.modal.isComplete
+		method: state.modal.method,
+		url: state.app.api
 	}
 }
 
@@ -64,9 +68,9 @@ const mapDispatchToProps = (dispatch) => {
 		closeForm: () => {
 			dispatch(actions.showModal(false))
 		},
-		completeForm: () => {
-			dispatch(actions.setFormCompleted(true))
-		}
+		setMenu: (burgers) => {
+      dispatch(actions.setMenu(burgers))
+    }
 	}
 }
 

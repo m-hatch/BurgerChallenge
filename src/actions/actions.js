@@ -12,3 +12,7 @@ export function setMenu(burgers) {
 export function showModal(isVisible) {
   return { type: types.SHOW_MODAL, isVisible}
 }
+
+export function setMethod(method) {
+  return { type: types.SET_METHOD, method}
+}
