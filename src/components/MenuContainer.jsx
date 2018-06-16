@@ -13,13 +13,13 @@ class MenuContainer extends React.Component {
   }
 
   componentDidMount() {
-    fetchData(this.props.api, this.applyFilter)
+    fetchData(this.applyFilter)
   }
 
   componentDidUpdate(previousProps) {
     // re-fetch data if filter has changed
     if (previousProps.filter !== this.props.filter) {
-      fetchData(this.props.api, this.applyFilter)
+      fetchData(this.applyFilter)
     }
   }
 
@@ -56,7 +56,7 @@ class MenuContainer extends React.Component {
       let agree = confirm(`Are you sure you want to delete burger: ${id}?`)
 
       if (agree) {
-        deleteData(this.props.url, id, this.props.setMenu)
+        deleteData(id, this.props.setMenu)
       }
     }
   }
@@ -74,10 +74,8 @@ class MenuContainer extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    api: state.app.api,
     burgers: state.menu.burgers,
-    filter: state.app.toppings.selected,
-    url: state.app.api
+    filter: state.app.toppings.selected
   }
 }
 

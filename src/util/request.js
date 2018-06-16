@@ -1,11 +1,16 @@
-export const fetchData = (url, callback) => {
+import BASE_URL from '../api'
+const url = `${BASE_URL}burgers/`
+
+// GET
+export const fetchData = (callback) => {
   fetch(url)
     .then(response => response.json())
     .then(data => callback(data))
     .catch(error => console.log(error))
 }
 
-export const postData = (url, data, callback) => {
+// POST
+export const postData = (data, callback) => {
   fetch(url, {
     headers: {
       'Accept': 'application/json',
@@ -22,7 +27,8 @@ export const postData = (url, data, callback) => {
     .catch(error => console.log(error))
 }
 
-export const putData = (url, id, data, callback) => {
+// PUT
+export const putData = (id, data, callback) => {
   const fullUrl = `${url + id}/`
   fetch(fullUrl, {
     headers: {
@@ -40,7 +46,8 @@ export const putData = (url, id, data, callback) => {
     .catch(error => console.log(error))
 }
 
-export const deleteData = (url, id, callback) => {
+// DELETE
+export const deleteData = (id, callback) => {
   const fullUrl = `${url + id}/`
   fetch(fullUrl, {
     headers: {

@@ -49,12 +49,12 @@ class BurgerForm extends React.Component {
     }
 
     if (this.props.method === 'POST') {
-      postData(this.props.url, data, this.props.setMenu)
+      postData(data, this.props.setMenu)
     }
 
     if (this.props.method === 'PUT') {
       //alert(values.id)
-      putData(this.props.url, values.id, data, this.props.setMenu)
+      putData(values.id, data, this.props.setMenu)
     }
 
     this.props.closeForm()
@@ -103,8 +103,7 @@ const mapStateToProps = (state) => {
     burgers: state.menu.burgers,
     initVal: state.app.initialValues,
     method: state.modal.formMethod,
-    formId: state.modal.formId,
-    url: state.app.api
+    formId: state.modal.formId
   }
 }
 
