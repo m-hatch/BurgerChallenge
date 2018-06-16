@@ -53,7 +53,6 @@ class BurgerForm extends React.Component {
     }
 
     if (this.props.method === 'PUT') {
-      //alert(values.id)
       putData(values.id, data, this.props.setMenu)
     }
 
@@ -75,11 +74,11 @@ class BurgerForm extends React.Component {
 
         <Field component={ ReduxInput } name="name" label="Name" />
         
-        <Field component={ ReduxSelect } name="has_bun" label="Has Bun">
+        <Field component={ ReduxSelect } name="has_bun" label="Has Bun" className="select--first">
           { this.getOptions() }
         </Field>
 
-        <Field component={ ReduxSelect } name="has_patty" label="Has Patty">
+        <Field component={ ReduxSelect } name="has_patty" label="Has Patty" className="select">
           { this.getOptions() }
         </Field>
 
