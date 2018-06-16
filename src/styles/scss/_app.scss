@@ -5,6 +5,7 @@ html, body {
 .app {
   position: relative;
   min-width: 380px;
+  min-height: calc(100vh + 40px);
   background-color: $concrete;
   font-family: $Helvetica;
   color: $emperor;
