@@ -15,13 +15,18 @@
 }
 
 @media screen and (min-width: 568px) {
-  .select,
-  .select--first {
+  .short {
+    width: 20%;
+    display: inline-block;
+  }
+
+  .half,
+  .half--first {
     width: 49%;
     display: inline-block;
   }
 
-  .select--first {
+  .half--first {
     margin-right: 2%
   }
 }

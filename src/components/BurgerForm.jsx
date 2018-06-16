@@ -70,15 +70,18 @@ class BurgerForm extends React.Component {
     return (
       <form className="form" onSubmit={ this.props.handleSubmit(this.onSubmit) }>
         
-        { this.props.method === 'PUT' && <Field component={ ReduxInput } name="id" label="ID" /> }
+        { 
+          this.props.method === 'PUT' && 
+            <Field component={ ReduxInput } name="id" label="ID" className="short" readOnly="true" /> 
+        }
 
         <Field component={ ReduxInput } name="name" label="Name" />
         
-        <Field component={ ReduxSelect } name="has_bun" label="Has Bun" className="select--first">
+        <Field component={ ReduxSelect } name="has_bun" label="Has Bun" className="half--first">
           { this.getOptions() }
         </Field>
 
-        <Field component={ ReduxSelect } name="has_patty" label="Has Patty" className="select">
+        <Field component={ ReduxSelect } name="has_patty" label="Has Patty" className="half">
           { this.getOptions() }
         </Field>
 
