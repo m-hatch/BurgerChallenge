@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import * as actions from '../actions/actions'
 import Menu from './Menu'
-import { fetchData } from '../util/request'
+import { fetchData, deleteData } from '../util/request'
 
 class MenuContainer extends React.Component {
 
@@ -53,7 +53,11 @@ class MenuContainer extends React.Component {
 
     if (method === 'delete') {
       // send warning and delete
-      alert('delete')
+      let agree = confirm(`Are you sure you want to delete burger: ${id}?`)
+
+      if (agree) {
+        deleteData(this.props.url, id, this.props.setMenu)
+      }
     }
   }
 
@@ -72,7 +76,8 @@ const mapStateToProps = (state) => {
   return {
     api: state.app.api,
     burgers: state.menu.burgers,
-    filter: state.app.toppings.selected
+    filter: state.app.toppings.selected,
+    url: state.app.api
   }
 }
 

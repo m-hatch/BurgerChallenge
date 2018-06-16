@@ -39,3 +39,19 @@ export const putData = (url, id, data, callback) => {
     .then(data => callback(data))
     .catch(error => console.log(error))
 }
+
+export const deleteData = (url, id, callback) => {
+  const fullUrl = `${url + id}/`
+  fetch(fullUrl, {
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    method: 'DELETE'
+    }
+  )
+    .then(response => fetch(url, {method: 'GET'}))
+    .then(res => res.json())
+    .then(data => callback(data))
+    .catch(error => console.log(error))
+}
