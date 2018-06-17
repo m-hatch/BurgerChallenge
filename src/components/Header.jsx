@@ -20,7 +20,7 @@ const mapStateToProps = (state) => {
   return {
     url: state.app.header.img,
     title: state.app.header.title,
-    title: state.app.header.subtitle
+    subtitle: state.app.header.subtitle
   }
 }
 

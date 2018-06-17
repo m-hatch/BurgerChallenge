@@ -27,21 +27,25 @@ export default ({ burgers, onClick }) => {
 
   // render
   return (
-    <table className="table">
-      <thead className="table__head">
-        <tr>
-          <th>ID</th>
-          <th>Name</th>
-          <th>Bun</th>
-          <th>Patty</th>
-          <th>Toppings</th>
-          <th>Edit/Delete</th>
-        </tr>
-      </thead>
+    <div className="table-wrapper">
 
-      <tbody className="table__body">
-        { getBurgers() }
-      </tbody>
-    </table>
+      <table className="table">
+        <thead className="table__head">
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Bun</th>
+            <th>Patty</th>
+            <th>Toppings</th>
+            <th>Edit/Delete</th>
+          </tr>
+        </thead>
+
+        <tbody className="table__body">
+          { getBurgers() }
+        </tbody>
+      </table>
+      
+    </div>
   )
 }
