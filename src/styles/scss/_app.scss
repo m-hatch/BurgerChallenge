@@ -1,13 +1,13 @@
 html, body {
-  background-color: $concrete;
+  background-color: $ghost;
 }
 
 .app {
   position: relative;
   min-width: 380px;
   min-height: calc(100vh + 40px);
-  background-color: $concrete;
+  background-color: $ghost;
   font-family: $Helvetica;
-  color: $emperor;
+  color: $mine-shaft;
   font-weight: 300;
 }

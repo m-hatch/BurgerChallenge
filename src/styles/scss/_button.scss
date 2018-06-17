@@ -6,7 +6,7 @@
   padding: .75em 1.5em;
   text-align: center;
   border-radius: 2px;
-  background-color: #615872;
+  background-color: $violet;
   background-image: none;
   touch-action: manipulation;
   cursor: pointer;
@@ -16,7 +16,7 @@
 
   &:hover,
   &:active {
-    background-color: #71637D;
+    background-color: $lilac;
     color: $white;
   }
 
