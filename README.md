@@ -1,6 +1,6 @@
 # BurgerChallenge
 
-Code Challenge: Create a front-end UI to consume the Burgers API CRUD endpoints. The API back-end can be found at [link]
+Code Challenge: Create a front-end UI to consume the Burgers API CRUD endpoints. The API back-end can be found at <https://github.com/m-hatch/burger_backend>
 
 ## Requirements
 
@@ -94,6 +94,7 @@ The API exposes the following resources:
 ## Installation
 
 (1) Install dependencies. In project root run: 
+
   ```$ npm install```
   
 (2) Connect the API. In the `src/` directory create a file named `api.js`. The contents of the file should be the following:
