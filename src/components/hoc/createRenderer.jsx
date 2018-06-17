@@ -1,6 +1,6 @@
 import React from 'react'
 
-const createRenderer = component => (props) => (
+export default component => (props) => (
     <div className={ (props.meta.error && props.meta.touched) ? 
       `${props.className} has-error` : props.className }>
       
@@ -15,5 +15,3 @@ const createRenderer = component => (props) => (
 
     </div>
   )
-
-export default createRenderer

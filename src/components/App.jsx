@@ -6,7 +6,7 @@ import ModalContainer from './ModalContainer'
 import Footer from './Footer'
 
 
-const App = (props) => {
+export default () => {
   return (
     <div className="app">
       <Header />
@@ -17,5 +17,3 @@ const App = (props) => {
     </div>
   )
 }
-
-export default App

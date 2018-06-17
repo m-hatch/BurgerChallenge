@@ -1,14 +1,9 @@
 import React from 'react'
 
-/*
- * @props onClick {function}
- * @props type {string}
- * @props value {string/element}
- */
-export default (props) => {
+export default ({ type, value, onClick }) => {
   return (
-    <button className="button" type={ props.type } onClick={ props.onClick }>
-      { props.value }
+    <button className="button" type={ type } onClick={ onClick }>
+      { value }
     </button>
   )
 }

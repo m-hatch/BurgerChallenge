@@ -5,7 +5,7 @@ import React from 'react'
  * @props subtitle {string}
  * @props url {string}
  */
-export default (props) => {
+export default () => {
 
   // we are just going to hard-code the values for this example
   const url = 'https://crunchbase-production-res.cloudinary.com/image/upload/c_lpad,h_256,w_256,f_auto,q_auto:eco/v1405452555/nfqkd2f6t8bc5uc8du6g.png'

@@ -2,7 +2,7 @@ import React from 'react'
 
 const date = new Date()
 
-export default (props) => {
+export default () => {
   return (
     <div className="footer">
       &copy; { date.getFullYear() } Artivest Burgers
