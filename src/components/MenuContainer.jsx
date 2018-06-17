@@ -75,7 +75,7 @@ class MenuContainer extends React.Component {
 const mapStateToProps = (state) => {
   return {
     burgers: state.menu.burgers,
-    filter: state.app.toppings.selected
+    filter: state.app.filter
   }
 }
 

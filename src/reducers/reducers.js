@@ -8,11 +8,8 @@ function app(state = init.app, action) {
   switch(action.type) {
 
     case types.SET_TOPPING:
-      const newState = state
-      state.toppings.selected = action.topping
-
       return Object.assign(
-        {}, state, newState
+        {}, state, { filter: action.topping }
       )
 
     default:

@@ -23,7 +23,7 @@ const Controls = (props) => {
       <Button type="button" value="Add Burger" onClick={ handleClick } />
 
       <select className="controls__select form-control" 
-        name="filter" onChange={ handleChange }>
+        name="filter" onChange={ handleChange } value={ props.filter }>
 
         <option value="all">Choose By Topping...</option>
         { 
@@ -38,7 +38,8 @@ const Controls = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    toppings: state.app.toppings.values
+    toppings: state.app.toppings.values,
+    filter: state.app.filter
   }
 }
 
