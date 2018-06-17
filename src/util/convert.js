@@ -6,28 +6,17 @@ export function reverseBool(bool) {
   return bool ? 'Yes' : 'No'
 }
 
-export function convertJson(arr) {
-  const result = []
-
-  if (arr && arr.length) {
-    for (let item of arr) {
-      let temp = {}
-      temp.name = item
-      result.push(temp)
-    }
-  }
-  
-  return result
+export function stringToObj(arr) {
+  return arr.map(str => {
+    return { name: str }
+  })
 }
 
-export function flattenObj(arr) {
-  const result = []
+export function objectToString(arr) {
+  return arr.map(obj => obj.name)
+}
 
-  if (arr && arr.length) {
-    for (let item of arr) {
-      result.push(item['name'])
-    }
-  }
-  
-  return result
+export function getCommaList(list, prop) {
+  return list.map((obj, i, arr) => 
+    (i < arr.length - 1) ? `${obj[prop]}, ` : obj[prop])
 }

@@ -1,11 +1,8 @@
 import React from 'react'
+import { getCommaList } from '../util/convert'
+
 
 export default ({ burgers, onClick }) => {
-
-  const getToppings = (toppings) => {
-    return toppings.map((topping, i, arr) => 
-      (i < arr.length - 1) ? `${topping.name}, ` : topping.name)
-  }
 
   const getBurgers = () => {
     return burgers.map(burger => {
@@ -15,7 +12,7 @@ export default ({ burgers, onClick }) => {
           <td>{ burger.name }</td>
           <td>{ burger.has_bun && <span>&#10004;</span>}</td>
           <td>{ burger.has_patty && <span>&#10004;</span>}</td>
-          <td>{ getToppings(burger.toppings) }</td>
+          <td>{ getCommaList(burger.toppings, 'name') }</td>
           <td>
             <a href="" onClick={ (e) => onClick(e, 'edit', burger.id) }>Edit</a>&nbsp;
             <a href="" onClick={ (e) => onClick(e, 'delete', burger.id) }>Delete</a>

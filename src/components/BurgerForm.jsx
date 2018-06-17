@@ -7,7 +7,7 @@ import ReduxInput from './ReduxInput'
 import ReduxSelect from './ReduxSelect'
 import Button from './Button'
 import validate from '../util/validate'
-import { convertBool, convertJson, reverseBool, flattenObj } from '../util/convert'
+import { convertBool, reverseBool, stringToObj, objectToString } from '../util/convert'
 import { postData, putData } from '../util/request'
 
 class BurgerForm extends React.Component {
@@ -31,7 +31,7 @@ class BurgerForm extends React.Component {
     )[0]
     data.has_bun = reverseBool(data.has_bun)
     data.has_patty = reverseBool(data.has_patty)
-    data.toppings = flattenObj(data.toppings)
+    data.toppings = objectToString(data.toppings)
     this.props.initialize(data)
   }
 
@@ -45,7 +45,7 @@ class BurgerForm extends React.Component {
       "name": values.name,
       "has_bun": convertBool(values.has_bun),
       "has_patty": convertBool(values.has_patty),
-      "toppings": convertJson(values.toppings)
+      "toppings": stringToObj(values.toppings)
     }
 
     if (this.props.method === 'POST') {
