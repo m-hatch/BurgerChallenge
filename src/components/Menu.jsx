@@ -1,6 +1,7 @@
 import React from 'react'
 
 export default ({ burgers, onClick }) => {
+
   const getToppings = (toppings) => {
     return toppings.map((topping, i, arr) => 
       (i < arr.length - 1) ? `${topping.name}, ` : topping.name)
@@ -27,7 +28,7 @@ export default ({ burgers, onClick }) => {
   // render
   return (
     <table className="table">
-      <thead>
+      <thead className="table__head">
         <tr>
           <th>ID</th>
           <th>Name</th>
@@ -38,7 +39,7 @@ export default ({ burgers, onClick }) => {
         </tr>
       </thead>
 
-      <tbody>
+      <tbody className="table__body">
         { getBurgers() }
       </tbody>
     </table>

@@ -6,12 +6,14 @@
   background-color: transparent;
   border: 1px solid $concrete;
 
-  thead {
+  &__head {
     background-color: $iris;
   }
 
-  tbody tr:hover {
-    background-color: $silk-stocking;
+  &__body {
+    tr:hover {
+      background-color: $silk-stocking;
+    }
   }
 
   th, td {
