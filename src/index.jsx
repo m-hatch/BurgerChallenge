@@ -4,6 +4,9 @@ import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import { devToolsEnhancer } from 'redux-devtools-extension'
 import reducer from './reducers/reducers'
+import Promise from 'core-js/es6/promise';
+import assign from 'core-js/fn/object/assign';
+import fetch from 'whatwg-fetch';
 import App from './components/App'
 import './styles/main.scss';
 
