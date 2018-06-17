@@ -5,7 +5,8 @@ html, body {
 .app {
   position: relative;
   min-width: 380px;
-  min-height: calc(100vh + 40px);
+  min-height: calc(100vh + 10px);
+  padding-bottom: 75px;
   background-color: $ghost;
   font-family: $Helvetica;
   color: $mine-shaft;

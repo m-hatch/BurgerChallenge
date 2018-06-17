@@ -3,6 +3,8 @@ import Header from './Header'
 import Controls from './Controls'
 import MenuContainer from './MenuContainer'
 import ModalContainer from './ModalContainer'
+import Footer from './Footer'
+
 
 const App = (props) => {
   return (
@@ -11,6 +13,7 @@ const App = (props) => {
       <Controls />
       <MenuContainer />
       <ModalContainer />
+      <Footer />
     </div>
   )
 }
