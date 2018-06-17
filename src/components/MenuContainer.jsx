@@ -35,7 +35,7 @@ class MenuContainer extends React.Component {
     // return filtered result
     const result = list.filter(burger => {
       const match = burger.toppings.filter(item => 
-        item.name === this.props.filter)
+        item.name === topping)
 
       return (match.length > 0)
     })

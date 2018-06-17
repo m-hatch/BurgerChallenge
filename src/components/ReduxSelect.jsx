@@ -6,4 +6,4 @@ const ReduxSelect = ({ input, children }) =>
     { children }
   </select>
 
- export default createRenderer(ReduxSelect)
+export default createRenderer(ReduxSelect)
