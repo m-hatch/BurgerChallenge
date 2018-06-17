@@ -1,17 +1,7 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
-/* 
- * @props title {string}
- * @props subtitle {string}
- * @props url {string}
- */
-export default () => {
-
-  // we are just going to hard-code the values for this example
-  const url = 'https://crunchbase-production-res.cloudinary.com/image/upload/c_lpad,h_256,w_256,f_auto,q_auto:eco/v1405452555/nfqkd2f6t8bc5uc8du6g.png'
-  const title = 'Artivest Burgers'
-  const subtitle = 'Find and create your own burgers.'
-
+const Header = ({ url, title, subtitle }) => {
   return (
     <div className="header">
 
@@ -24,5 +14,16 @@ export default () => {
 
     </div>
   )
-
 }
+
+const mapStateToProps = (state) => {
+  return {
+    url: state.app.header.img,
+    title: state.app.header.title,
+    title: state.app.header.subtitle
+  }
+}
+
+export default connect(
+  mapStateToProps
+)(Header)
